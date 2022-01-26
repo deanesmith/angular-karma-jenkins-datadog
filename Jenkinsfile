@@ -17,8 +17,7 @@ pipeline {
             environment {
                 DATADOG_API_KEY=credentials('DATADOG-API-KEY')
                 DD_ENV='local'
-                DD_SERVICE='bodata'
-                DD_TEST_RESULTS_DIR='unit-test-results'
+                DD_SERVICE='angular-test'
             }
             steps {
                 echo 'Testing...'
