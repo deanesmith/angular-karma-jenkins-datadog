@@ -17,7 +17,6 @@ pipeline {
             environment {
                 DATADOG_API_KEY=credentials('DATADOG-API-KEY')
                 DD_ENV='local'
-                DD_SERVICE='angular-test'
             }
             steps {
                 echo 'Testing...'
@@ -25,7 +24,7 @@ pipeline {
             }
             post {
                 always {
-                    sh './node_modules/.bin/datadog-ci junit upload --service bodata ./TESTS-*.xml'
+                    sh './node_modules/.bin/datadog-ci junit upload --service angular-karma-jenkins-datadog ./TESTS-*.xml'
                 }
             }
         }
