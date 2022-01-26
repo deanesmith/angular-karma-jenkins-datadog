@@ -19,7 +19,7 @@ describe('AppComponent', () => {
   it(`should have as title 'angular-ci-example'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('angular-ci-example1');
+    expect(app.title).toEqual('angular-ci-example');
   });
 
   it('should render title', () => {
