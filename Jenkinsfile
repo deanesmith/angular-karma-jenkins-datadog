@@ -24,7 +24,7 @@ pipeline {
             }
             post {
                 always {
-                    sh './node_modules/.bin/datadog-ci junit upload --service angular-karma-jenkins-datadog ./TESTS-*.xml'
+                    sh 'npx datadog-ci junit upload --service angular-karma-jenkins-datadog ./TESTS-*.xml'
                 }
             }
         }
