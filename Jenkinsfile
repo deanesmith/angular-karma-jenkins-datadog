@@ -17,14 +17,15 @@ pipeline {
             environment {
                 DATADOG_API_KEY=credentials('DATADOG-API-KEY')
                 DD_ENV='jenkins'
+                DD_SERVICE='bodata'
             }
             steps {
                 echo 'Testing...'
                 sh 'npm run test'
             }
             post {
-                always {
-                    sh 'npx datadog-ci junit upload --service angular-karma-jenkins-datadog ./TESTS-*.xml'
+                failure {
+                    sh 'npx datadog-ci junit upload ./TESTS-*.xml'
                 }
             }
         }
