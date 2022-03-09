@@ -16,8 +16,8 @@ pipeline {
         stage('Test') {
             environment {
                 DATADOG_API_KEY=credentials('DATADOG-API-KEY')
-                DD_ENV='jenkins'
-                DD_SERVICE='deane'
+                DD_ENV=''
+                DD_SERVICE=''
             }
             steps {
                 echo 'Testing...'
